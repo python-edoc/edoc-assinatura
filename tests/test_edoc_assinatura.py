@@ -2,11 +2,12 @@
 
 import os
 from datetime import datetime
+
 from tzlocal import get_localzone
 
-from edoc_assinatura.cli import main
-from edoc_assinatura.certificado import Certificado
 from edoc_assinatura.assinatura import Assinatura
+from edoc_assinatura.certificado import Certificado
+from edoc_assinatura.cli import main
 
 caminho = os.environ['caminho_certificado']
 senha = os.environ['senha_certificado']
@@ -47,4 +48,3 @@ def test_assinatura_pdf():
     with open(nome_arquivo, 'wb') as fp:
         fp.write(arquivo)
         fp.write(assinatura)
-
